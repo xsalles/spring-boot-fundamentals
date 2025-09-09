@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
@@ -23,6 +24,11 @@ public class FirstController {
 
     @GetMapping("/queryParam")
     public String getQueryParam(@RequestParam Integer id) {
+       return "O parâmetro é: " + id;
+    }
+
+    @GetMapping("/bodyParam")
+    public String getBodyParam(@RequestBody String id) {
        return "O parâmetro é: " + id;
     }
 }
