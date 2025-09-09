@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 
 @RestController
@@ -30,5 +32,10 @@ public class FirstController {
     @GetMapping("/bodyParam")
     public String getBodyParam(@RequestBody String id) {
        return "O parâmetro é: " + id;
+    }
+
+    @PostMapping("/headerParam")
+    public String getHeaderParam(@RequestHeader("name") String name) {
+       return "O parâmetro é: " + name;
     }
 }
